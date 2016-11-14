@@ -10,7 +10,6 @@
 		D9E5FE3AA5EFD34AC5DF104E /* libPods-Trakt.tv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C75CBDEEA9A0F6FECE77B0B /* libPods-Trakt.tv.a */; };
 		E9670E401DDA5B6E001BFFE8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9670E3F1DDA5B6E001BFFE8 /* main.m */; };
 		E9670E431DDA5B6E001BFFE8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9670E421DDA5B6E001BFFE8 /* AppDelegate.m */; };
-		E9670E461DDA5B6E001BFFE8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9670E451DDA5B6E001BFFE8 /* ViewController.m */; };
 		E9670E491DDA5B6E001BFFE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9670E471DDA5B6E001BFFE8 /* Main.storyboard */; };
 		E9670E4B1DDA5B6E001BFFE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9670E4A1DDA5B6E001BFFE8 /* Assets.xcassets */; };
 		E9670E4E1DDA5B6E001BFFE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9670E4C1DDA5B6E001BFFE8 /* LaunchScreen.storyboard */; };
@@ -24,8 +23,6 @@
 		E9670E3F1DDA5B6E001BFFE8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E9670E411DDA5B6E001BFFE8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E9670E421DDA5B6E001BFFE8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E9670E441DDA5B6E001BFFE8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E9670E451DDA5B6E001BFFE8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E9670E481DDA5B6E001BFFE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E9670E4A1DDA5B6E001BFFE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9670E4D1DDA5B6E001BFFE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -84,12 +81,7 @@
 			children = (
 				E9670E411DDA5B6E001BFFE8 /* AppDelegate.h */,
 				E9670E421DDA5B6E001BFFE8 /* AppDelegate.m */,
-				E9670E441DDA5B6E001BFFE8 /* ViewController.h */,
-				E9670E451DDA5B6E001BFFE8 /* ViewController.m */,
-				E9670E471DDA5B6E001BFFE8 /* Main.storyboard */,
-				E9670E4A1DDA5B6E001BFFE8 /* Assets.xcassets */,
-				E9670E4C1DDA5B6E001BFFE8 /* LaunchScreen.storyboard */,
-				E9670E4F1DDA5B6E001BFFE8 /* Info.plist */,
+				E9670E551DDA5D49001BFFE8 /* Resources */,
 				E9670E3E1DDA5B6E001BFFE8 /* Supporting Files */,
 			);
 			path = Trakt.tv;
@@ -99,8 +91,19 @@
 			isa = PBXGroup;
 			children = (
 				E9670E3F1DDA5B6E001BFFE8 /* main.m */,
+				E9670E4F1DDA5B6E001BFFE8 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E9670E551DDA5D49001BFFE8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E9670E471DDA5B6E001BFFE8 /* Main.storyboard */,
+				E9670E4A1DDA5B6E001BFFE8 /* Assets.xcassets */,
+				E9670E4C1DDA5B6E001BFFE8 /* LaunchScreen.storyboard */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,7 +228,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9670E461DDA5B6E001BFFE8 /* ViewController.m in Sources */,
 				E9670E431DDA5B6E001BFFE8 /* AppDelegate.m in Sources */,
 				E9670E401DDA5B6E001BFFE8 /* main.m in Sources */,
 			);
