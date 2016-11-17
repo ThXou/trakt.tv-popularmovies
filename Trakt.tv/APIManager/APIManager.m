@@ -15,14 +15,16 @@
 
 #pragma mark - Movies
 
-- (void)getPopularMoviesWithCompletionBlock:(CompletionBlock)completionBlock
+- (void)getPopularMoviesWithPage:(NSInteger)page completionBlock:(CompletionBlock)completionBlock
 {
+    NSDictionary *parameters = @{ @"extended" : @"full", @"page" : @(page), @"limit" : @(10) };
     [[APIHTTPManager sharedManager] GET:@"movies/popular"
-                             parameters:@{ @"extended" : @"full" }
+                             parameters:parameters
                         completionBlock:^(id responseData, NSError *error) {
                             if (error) {
                                 completionBlock(nil, error);
                             } else {
+                                NSLog(@"response: %@", responseData);
                                 NSArray *movies = [self parseMoviesWithResponseData:responseData];
                                 completionBlock(movies, nil);
                             }

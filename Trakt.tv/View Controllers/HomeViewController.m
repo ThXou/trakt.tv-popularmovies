@@ -12,10 +12,12 @@
 #import "TTMovie.h"
 
 
-@interface HomeViewController ()
+@interface HomeViewController () <UIScrollViewDelegate>
 
 @property (nonatomic) APIManager *apiManager;
-@property (nonatomic) NSArray *movies;
+@property (nonatomic) NSMutableArray *movies;
+@property (nonatomic, getter = isLoading) BOOL loading;
+@property (nonatomic) NSInteger nextPage;
 
 @end
 
@@ -26,16 +28,69 @@
 {
     [super viewDidLoad];
     
-
-    self.apiManager = [[APIManager alloc] init];
-    [self.apiManager getPopularMoviesWithCompletionBlock:^(id responseData, NSError *error) {
-        self.movies = responseData;
-        [self.tableView reloadData];
-    }];
     
+    self.movies = [@[] mutableCopy];
+    self.nextPage = 1;
+    
+    [self loadMovies];
     
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 80.0;
+}
+
+
+
+#pragma mark - UIScrollView methods
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGFloat distanceToBottom = scrollView.contentSize.height - (scrollView.contentOffset.y + scrollView.frame.size.height);
+    self.loading = (distanceToBottom <= 44);
+    if (distanceToBottom == 0) {
+        [self loadMovies];
+    }
+}
+
+
+
+#pragma mark - Helpers
+
+- (void)setLoading:(BOOL)loading
+{
+    if (_loading != loading) {
+        _loading = loading;
+        
+        if (_loading)
+        {
+            UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+            indicator.contentMode = UIViewContentModeCenter;
+            
+            CGRect frame = indicator.frame;
+            frame.size.height = 44.0;
+            indicator.frame = frame;
+            
+            [indicator startAnimating];
+            
+            self.tableView.tableFooterView = indicator;
+        }
+        else {
+            self.tableView.tableFooterView = nil;
+        }
+    }
+}
+
+
+- (void)loadMovies
+{
+    self.apiManager = [[APIManager alloc] init];
+    [self.apiManager getPopularMoviesWithPage:self.nextPage completionBlock:^(id responseData, NSError *error) {
+        NSArray *moviesData = responseData;
+        if (moviesData.count > 0) {
+            [self.movies addObjectsFromArray:responseData];
+            self.nextPage++;
+            [self.tableView reloadData];
+        }
+    }];
 }
 
 

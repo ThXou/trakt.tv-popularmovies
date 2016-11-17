@@ -8,6 +8,6 @@
 
 @interface APIManager : NSObject
 
-- (void)getPopularMoviesWithCompletionBlock:(CompletionBlock)completionBlock;
+- (void)getPopularMoviesWithPage:(NSInteger)page completionBlock:(CompletionBlock)completionBlock;
 
 @end

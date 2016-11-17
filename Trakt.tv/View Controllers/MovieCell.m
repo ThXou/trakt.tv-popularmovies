@@ -56,9 +56,8 @@
         }
     
         dispatch_async(dispatch_get_main_queue(), ^{
-            if (response) {
-                [self.activityIndicator stopAnimating];
-                
+            if (response)
+            {
                 SDWebImageManager *manager = [SDWebImageManager sharedManager];
                 [manager downloadImageWithURL:response[@"Poster"]
                                       options:0
@@ -67,13 +66,21 @@
                                         self.posterImageHeightConstraint.constant = self.posterImageView.frame.size.width / image.size.width * image.size.height;
                                         self.posterImageView.image = image;
                                         [self layoutIfNeeded];
+                                        [self stopActivityIndicatior];
                                     }];
+            }
+            else {
+                [self stopActivityIndicatior];
             }
         });
         
     });
-    
-    
+}
+
+
+- (void)stopActivityIndicatior {
+    [self.activityIndicator stopAnimating];
+    [self.activityIndicator removeFromSuperview];
 }
 
 
