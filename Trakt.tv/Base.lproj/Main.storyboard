@@ -13,7 +13,7 @@
         <!--Top 10 Movies-->
         <scene sceneID="oiL-Mw-vpb">
             <objects>
-                <tableViewController id="0eC-1j-mKp" sceneMemberID="viewController">
+                <tableViewController id="0eC-1j-mKp" customClass="HomeViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="149" sectionHeaderHeight="28" sectionFooterHeight="28" id="yL4-ho-XYB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

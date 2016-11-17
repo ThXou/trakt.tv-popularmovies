@@ -13,6 +13,9 @@
 		E9670E491DDA5B6E001BFFE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9670E471DDA5B6E001BFFE8 /* Main.storyboard */; };
 		E9670E4B1DDA5B6E001BFFE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9670E4A1DDA5B6E001BFFE8 /* Assets.xcassets */; };
 		E9670E4E1DDA5B6E001BFFE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9670E4C1DDA5B6E001BFFE8 /* LaunchScreen.storyboard */; };
+		E9670E581DDA6863001BFFE8 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9670E571DDA6863001BFFE8 /* HomeViewController.m */; };
+		E9670E5D1DDE284A001BFFE8 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E9670E5C1DDE284A001BFFE8 /* APIManager.m */; };
+		E9670E611DDE417D001BFFE8 /* TTMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = E9670E601DDE417D001BFFE8 /* TTMovie.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +30,12 @@
 		E9670E4A1DDA5B6E001BFFE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9670E4D1DDA5B6E001BFFE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E9670E4F1DDA5B6E001BFFE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9670E561DDA6863001BFFE8 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = "View Controllers/HomeViewController.h"; sourceTree = "<group>"; };
+		E9670E571DDA6863001BFFE8 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = "View Controllers/HomeViewController.m"; sourceTree = "<group>"; };
+		E9670E5B1DDE284A001BFFE8 /* APIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APIManager.h; path = APIManager/APIManager.h; sourceTree = "<group>"; };
+		E9670E5C1DDE284A001BFFE8 /* APIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APIManager.m; path = APIManager/APIManager.m; sourceTree = "<group>"; };
+		E9670E5F1DDE417D001BFFE8 /* TTMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTMovie.h; path = Model/TTMovie.h; sourceTree = "<group>"; };
+		E9670E601DDE417D001BFFE8 /* TTMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTMovie.m; path = Model/TTMovie.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +90,9 @@
 			children = (
 				E9670E411DDA5B6E001BFFE8 /* AppDelegate.h */,
 				E9670E421DDA5B6E001BFFE8 /* AppDelegate.m */,
+				E9670E5A1DDA688B001BFFE8 /* API Manager */,
+				E9670E5E1DDE4157001BFFE8 /* Model */,
+				E9670E591DDA6868001BFFE8 /* View Controllers */,
 				E9670E551DDA5D49001BFFE8 /* Resources */,
 				E9670E3E1DDA5B6E001BFFE8 /* Supporting Files */,
 			);
@@ -104,6 +116,33 @@
 				E9670E4C1DDA5B6E001BFFE8 /* LaunchScreen.storyboard */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		E9670E591DDA6868001BFFE8 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E9670E561DDA6863001BFFE8 /* HomeViewController.h */,
+				E9670E571DDA6863001BFFE8 /* HomeViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		E9670E5A1DDA688B001BFFE8 /* API Manager */ = {
+			isa = PBXGroup;
+			children = (
+				E9670E5B1DDE284A001BFFE8 /* APIManager.h */,
+				E9670E5C1DDE284A001BFFE8 /* APIManager.m */,
+			);
+			name = "API Manager";
+			sourceTree = "<group>";
+		};
+		E9670E5E1DDE4157001BFFE8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E9670E5F1DDE417D001BFFE8 /* TTMovie.h */,
+				E9670E601DDE417D001BFFE8 /* TTMovie.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,8 +267,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9670E5D1DDE284A001BFFE8 /* APIManager.m in Sources */,
+				E9670E611DDE417D001BFFE8 /* TTMovie.m in Sources */,
 				E9670E431DDA5B6E001BFFE8 /* AppDelegate.m in Sources */,
 				E9670E401DDA5B6E001BFFE8 /* main.m in Sources */,
+				E9670E581DDA6863001BFFE8 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
