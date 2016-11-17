@@ -26,8 +26,13 @@
     self.imdb = ids[@"imdb"];
     
     self.title = dictionary[@"title"];
-    self.year = dictionary[@"year"];
+    self.year = [NSString stringWithFormat:@"%li", (long)[dictionary[@"year"] integerValue]];
     self.overview = dictionary[@"overview"];
+}
+
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"title: %@ | year: %@", self.title, self.year];
 }
 
 

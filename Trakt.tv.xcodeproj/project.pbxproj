@@ -17,6 +17,7 @@
 		E9670E5D1DDE284A001BFFE8 /* APIHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E9670E5C1DDE284A001BFFE8 /* APIHTTPManager.m */; };
 		E9670E611DDE417D001BFFE8 /* TTMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = E9670E601DDE417D001BFFE8 /* TTMovie.m */; };
 		E9670E671DDE4635001BFFE8 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E9670E661DDE4635001BFFE8 /* APIManager.m */; };
+		E9670E6F1DDE5690001BFFE8 /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9670E6E1DDE5690001BFFE8 /* MovieCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,8 @@
 		E9670E651DDE4635001BFFE8 /* APIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APIManager.h; path = APIManager/APIManager.h; sourceTree = "<group>"; };
 		E9670E661DDE4635001BFFE8 /* APIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APIManager.m; path = APIManager/APIManager.m; sourceTree = "<group>"; };
 		E9670E6C1DDE53C9001BFFE8 /* prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prefix.pch; sourceTree = "<group>"; };
+		E9670E6D1DDE5690001BFFE8 /* MovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MovieCell.h; path = "View Controllers/MovieCell.h"; sourceTree = "<group>"; };
+		E9670E6E1DDE5690001BFFE8 /* MovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MovieCell.m; path = "View Controllers/MovieCell.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,8 @@
 			children = (
 				E9670E561DDA6863001BFFE8 /* HomeViewController.h */,
 				E9670E571DDA6863001BFFE8 /* HomeViewController.m */,
+				E9670E6D1DDE5690001BFFE8 /* MovieCell.h */,
+				E9670E6E1DDE5690001BFFE8 /* MovieCell.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -277,6 +282,7 @@
 				E9670E5D1DDE284A001BFFE8 /* APIHTTPManager.m in Sources */,
 				E9670E611DDE417D001BFFE8 /* TTMovie.m in Sources */,
 				E9670E671DDE4635001BFFE8 /* APIManager.m in Sources */,
+				E9670E6F1DDE5690001BFFE8 /* MovieCell.m in Sources */,
 				E9670E431DDA5B6E001BFFE8 /* AppDelegate.m in Sources */,
 				E9670E401DDA5B6E001BFFE8 /* main.m in Sources */,
 				E9670E581DDA6863001BFFE8 /* HomeViewController.m in Sources */,

@@ -10,6 +10,7 @@
 #define prefix_pch
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 typedef __block void (^CompletionBlock)(id responseData, NSError *error);
 

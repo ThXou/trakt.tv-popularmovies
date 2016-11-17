@@ -24,11 +24,14 @@
                                 completionBlock(nil, error);
                             } else {
                                 NSArray *movies = [self parseMoviesWithResponseData:responseData];
-                                completionBlock(responseData, nil);
+                                completionBlock(movies, nil);
                             }
                         }];
 }
 
+
+
+#pragma mark - Parsing
 
 - (NSArray *)parseMoviesWithResponseData:(NSArray *)responseData
 {
