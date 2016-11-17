@@ -14,8 +14,9 @@
 		E9670E4B1DDA5B6E001BFFE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9670E4A1DDA5B6E001BFFE8 /* Assets.xcassets */; };
 		E9670E4E1DDA5B6E001BFFE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9670E4C1DDA5B6E001BFFE8 /* LaunchScreen.storyboard */; };
 		E9670E581DDA6863001BFFE8 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9670E571DDA6863001BFFE8 /* HomeViewController.m */; };
-		E9670E5D1DDE284A001BFFE8 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E9670E5C1DDE284A001BFFE8 /* APIManager.m */; };
+		E9670E5D1DDE284A001BFFE8 /* APIHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E9670E5C1DDE284A001BFFE8 /* APIHTTPManager.m */; };
 		E9670E611DDE417D001BFFE8 /* TTMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = E9670E601DDE417D001BFFE8 /* TTMovie.m */; };
+		E9670E671DDE4635001BFFE8 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E9670E661DDE4635001BFFE8 /* APIManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,10 +33,13 @@
 		E9670E4F1DDA5B6E001BFFE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9670E561DDA6863001BFFE8 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = "View Controllers/HomeViewController.h"; sourceTree = "<group>"; };
 		E9670E571DDA6863001BFFE8 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = "View Controllers/HomeViewController.m"; sourceTree = "<group>"; };
-		E9670E5B1DDE284A001BFFE8 /* APIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APIManager.h; path = APIManager/APIManager.h; sourceTree = "<group>"; };
-		E9670E5C1DDE284A001BFFE8 /* APIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APIManager.m; path = APIManager/APIManager.m; sourceTree = "<group>"; };
+		E9670E5B1DDE284A001BFFE8 /* APIHTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APIHTTPManager.h; path = APIManager/APIHTTPManager.h; sourceTree = "<group>"; };
+		E9670E5C1DDE284A001BFFE8 /* APIHTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APIHTTPManager.m; path = APIManager/APIHTTPManager.m; sourceTree = "<group>"; };
 		E9670E5F1DDE417D001BFFE8 /* TTMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTMovie.h; path = Model/TTMovie.h; sourceTree = "<group>"; };
 		E9670E601DDE417D001BFFE8 /* TTMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTMovie.m; path = Model/TTMovie.m; sourceTree = "<group>"; };
+		E9670E651DDE4635001BFFE8 /* APIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APIManager.h; path = APIManager/APIManager.h; sourceTree = "<group>"; };
+		E9670E661DDE4635001BFFE8 /* APIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APIManager.m; path = APIManager/APIManager.m; sourceTree = "<group>"; };
+		E9670E6C1DDE53C9001BFFE8 /* prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prefix.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 			children = (
 				E9670E3F1DDA5B6E001BFFE8 /* main.m */,
 				E9670E4F1DDA5B6E001BFFE8 /* Info.plist */,
+				E9670E6C1DDE53C9001BFFE8 /* prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -130,8 +135,10 @@
 		E9670E5A1DDA688B001BFFE8 /* API Manager */ = {
 			isa = PBXGroup;
 			children = (
-				E9670E5B1DDE284A001BFFE8 /* APIManager.h */,
-				E9670E5C1DDE284A001BFFE8 /* APIManager.m */,
+				E9670E5B1DDE284A001BFFE8 /* APIHTTPManager.h */,
+				E9670E5C1DDE284A001BFFE8 /* APIHTTPManager.m */,
+				E9670E651DDE4635001BFFE8 /* APIManager.h */,
+				E9670E661DDE4635001BFFE8 /* APIManager.m */,
 			);
 			name = "API Manager";
 			sourceTree = "<group>";
@@ -267,8 +274,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9670E5D1DDE284A001BFFE8 /* APIManager.m in Sources */,
+				E9670E5D1DDE284A001BFFE8 /* APIHTTPManager.m in Sources */,
 				E9670E611DDE417D001BFFE8 /* TTMovie.m in Sources */,
+				E9670E671DDE4635001BFFE8 /* APIManager.m in Sources */,
 				E9670E431DDA5B6E001BFFE8 /* AppDelegate.m in Sources */,
 				E9670E401DDA5B6E001BFFE8 /* main.m in Sources */,
 				E9670E581DDA6863001BFFE8 /* HomeViewController.m in Sources */,
@@ -390,6 +398,8 @@
 			baseConfigurationReference = D81FB910E6CDF99C4B767ACD /* Pods-Trakt.tv.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Trakt.tv/prefix.pch;
 				INFOPLIST_FILE = Trakt.tv/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.thxou.Trakt-tv";
@@ -402,6 +412,8 @@
 			baseConfigurationReference = A963CF4E8BF188BCC797BFDC /* Pods-Trakt.tv.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Trakt.tv/prefix.pch;
 				INFOPLIST_FILE = Trakt.tv/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.thxou.Trakt-tv";

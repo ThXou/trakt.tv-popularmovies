@@ -6,16 +6,8 @@
 //  Copyright © 2016 ThXou. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <AFNetworking.h>
+@interface APIManager : NSObject
 
-typedef __block void (^CompletionBlock)(id responseData, NSError *error);
-
-@interface APIManager : AFHTTPSessionManager
-
-+ (APIManager *)sharedManager;
-
-- (void)GET:(NSString *)path parameters:(id)parameters completionBlock:(CompletionBlock)completionBlock;
-
+- (void)getPopularMoviesWithCompletionBlock:(CompletionBlock)completionBlock;
 
 @end

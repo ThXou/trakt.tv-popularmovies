@@ -9,7 +9,6 @@
 #import "HomeViewController.h"
 #import "APIManager.h"
 
-
 @interface HomeViewController ()
 
 @end
@@ -22,28 +21,17 @@
     [super viewDidLoad];
     
     
-    [[APIManager sharedManager] GET:@"movies/popular"
-                         parameters:@{ @"extended" : @"full" }
-                    completionBlock:^(id responseData, NSError *error) {
-                        NSLog(@"response: %@", responseData);
-                        NSLog(@"error: %@", error);
-                    }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
     return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
     return 0;
 }
 

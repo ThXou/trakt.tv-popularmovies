@@ -1,0 +1,16 @@
+//
+//  prefix.pch
+//  Trakt.tv
+//
+//  Created by ThXou on 17/11/2016.
+//  Copyright © 2016 ThXou. All rights reserved.
+//
+
+#ifndef prefix_pch
+#define prefix_pch
+
+#import <Foundation/Foundation.h>
+
+typedef __block void (^CompletionBlock)(id responseData, NSError *error);
+
+#endif /* prefix_pch */
