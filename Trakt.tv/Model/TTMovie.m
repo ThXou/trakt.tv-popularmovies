@@ -12,22 +12,29 @@
 
 @implementation TTMovie
 
-+ (TTMovie *)importFromDictionary:(NSDictionary *)dictionary
++ (TTMovie *)importFromDictionary:(NSDictionary *)dictionary searching:(BOOL)searching
 {
     TTMovie *movie = [[TTMovie alloc] init];
-    [movie importValuesFromDictionary:dictionary];
+    [movie importValuesFromDictionary:dictionary searching:searching];
     return movie;
 }
 
 
-- (void)importValuesFromDictionary:(NSDictionary *)dictionary
+- (void)importValuesFromDictionary:(NSDictionary *)dictionary searching:(BOOL)searching
 {
-    NSDictionary *ids = dictionary[@"ids"];
-    self.imdb = ids[@"imdb"];
+    NSDictionary *movie;
+    if (searching) {
+        movie = dictionary[@"movie"];
+    } else {
+        movie = dictionary;
+    }
     
-    self.title = dictionary[@"title"];
-    self.year = [NSString stringWithFormat:@"%li", (long)[dictionary[@"year"] integerValue]];
-    self.overview = dictionary[@"overview"];
+    NSDictionary *ids = movie[@"ids"];
+    self.imdb = ids[@"imdb"] != [NSNull null] ? ids[@"imdb"] : @"";
+    
+    self.title = movie[@"title"] != [NSNull null] ? movie[@"title"] : @"";
+    self.year = movie[@"year"] != [NSNull null] ? [NSString stringWithFormat:@"%li", (long)[movie[@"year"] integerValue]] : @"";
+    self.overview = movie[@"overview"] != [NSNull null] ? movie[@"overview"] : @"";
 }
 
 

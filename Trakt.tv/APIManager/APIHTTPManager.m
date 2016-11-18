@@ -67,4 +67,12 @@ static NSString *const kClientID = @"019a13b1881ae971f91295efc7fdecfa48b32c2a69f
 
 
 
+#pragma mark - Managing operations
+
+- (void)cancel {
+    [self.operationQueue cancelAllOperations];
+}
+
+
+
 @end

@@ -9,5 +9,6 @@
 @interface APIManager : NSObject
 
 - (void)getPopularMoviesWithPage:(NSInteger)page completionBlock:(CompletionBlock)completionBlock;
+- (void)searchMoviesWithTerm:(NSString *)term page:(NSInteger)page completionBlock:(CompletionBlock)completionBlock;
 
 @end

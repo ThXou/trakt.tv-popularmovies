@@ -15,6 +15,7 @@
 @property (nonatomic, copy) NSString *year;
 @property (nonatomic, copy) NSString *overview;
 
-+ (TTMovie *)importFromDictionary:(NSDictionary *)dictionary;
++ (TTMovie *)importFromDictionary:(NSDictionary *)dictionary searching:(BOOL)searching;
+
 
 @end

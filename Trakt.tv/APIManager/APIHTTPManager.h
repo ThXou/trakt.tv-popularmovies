@@ -14,5 +14,6 @@
 
 - (void)GET:(NSString *)path parameters:(id)parameters completionBlock:(CompletionBlock)completionBlock;
 
+- (void)cancel;
 
 @end

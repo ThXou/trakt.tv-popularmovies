@@ -37,6 +37,9 @@
     _activityIndicator.center = _posterImageView.center;
     [self addSubview:_activityIndicator];
     [_activityIndicator startAnimating];
+    
+    self.posterImageView.layer.cornerRadius = 5.0;
+    self.posterImageView.layer.masksToBounds = YES;
 }
 
 
@@ -45,36 +48,43 @@
     self.titleLabel.text = movie.title;
     self.yearLabel.text = movie.year;
     self.overviewLabel.text = movie.overview;
+    self.posterImageView.image = [UIImage imageNamed:@"placeholder"];
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        
-        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.omdbapi.com/?i=%@", movie.imdb]];
-        NSData *data = [NSData dataWithContentsOfURL:url];
-        NSDictionary *response;
-        if (data) {
-            response = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:NULL];
-        }
     
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (response)
-            {
-                SDWebImageManager *manager = [SDWebImageManager sharedManager];
-                [manager downloadImageWithURL:response[@"Poster"]
-                                      options:0
-                                     progress:nil
-                                    completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-                                        self.posterImageHeightConstraint.constant = self.posterImageView.frame.size.width / image.size.width * image.size.height;
-                                        self.posterImageView.image = image;
-                                        [self layoutIfNeeded];
-                                        [self stopActivityIndicatior];
-                                    }];
+    if (![movie.imdb isEqualToString:@""])
+    {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            
+            NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.omdbapi.com/?i=%@", movie.imdb]];
+            NSData *data = [NSData dataWithContentsOfURL:url];
+            NSDictionary *response;
+            if (data) {
+                response = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:NULL];
             }
-            else {
-                [self stopActivityIndicatior];
-            }
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (response)
+                {
+                    SDWebImageManager *manager = [SDWebImageManager sharedManager];
+                    [manager downloadImageWithURL:response[@"Poster"]
+                                          options:0
+                                         progress:nil
+                                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+                                            if (image) {
+                                                self.posterImageHeightConstraint.constant = self.posterImageView.frame.size.width / image.size.width * image.size.height;
+                                                self.posterImageView.image = image;
+                                                [self layoutIfNeeded];
+                                                [self stopActivityIndicatior];
+                                            }
+                                        }];
+                }
+                else {
+                    [self stopActivityIndicatior];
+                }
+            });
+            
         });
-        
-    });
+    }
 }
 
 
